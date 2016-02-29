@@ -1,0 +1,15 @@
+{
+  "name": "never-bored",
+  "version": "1.0.0",
+  "description": "Generate 100s of fun and easy activities for kids to do on their own.",
+  "main": "get-activity.js",
+  "author": "GeekyTime",
+  "license": "MIT",
+  "dependencies": {
+    "condense-whitespace": "~1.0.0",
+    "lodash": "~4.5.1",
+    "pluralize": "~1.2.1",
+    "sentencer": "~0.1.5",
+    "string-template": "~1.0.0"
+  }
+}
