@@ -8,7 +8,11 @@ An activity generator for kids who say they are bored.
 - _Make a puppet show about floating aliens on a mountain_
 - _Dress up and pretend you are with llamas in outer space_
 
-## Usage
+## Web Usage
+
+[never-bored is available on itch.io](https://geekytime.itch.io/never-bored)
+
+## Command-Line Usage
 
 1. `npm install never-bored -g`
 2. Wait for a kid to tell you they are bored.

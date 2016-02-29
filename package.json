@@ -8,6 +8,11 @@
   "bin": {
     "never-bored": "bin/index.js"
   },
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "publish": "zip never-bored-web.zip index.html bundle.js"
+  },
   "repository": "https://github.com/geekytime/never-bored",
   "dependencies": {
     "condense-whitespace": "~1.0.0",
@@ -16,5 +21,8 @@
     "pluralize": "~1.2.1",
     "sentencer": "~0.1.5",
     "string-template": "~1.0.0"
+  },
+  "devDependencies": {
+    "webpack": "~1.12.14"
   }
 }
