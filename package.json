@@ -5,8 +5,13 @@
   "main": "get-activity.js",
   "author": "GeekyTime",
   "license": "MIT",
+  "bin": {
+    "never-bored": "bin/index.js"
+  },
+  "repository": "https://github.com/geekytime/never-bored",
   "dependencies": {
     "condense-whitespace": "~1.0.0",
+    "is-vowel": "~1.2.1",
     "lodash": "~4.5.1",
     "pluralize": "~1.2.1",
     "sentencer": "~0.1.5",
