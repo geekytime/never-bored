@@ -21,5 +21,9 @@ module.exports = [
   "on a boat",
   "at camp",
   "in the forest",
-  "at home"  
+  "at home",
+  "at a birthday party",
+  "at a Christmas party",
+  "at a Halloween party",
+  "at a Valentine's Day dance"
 ];

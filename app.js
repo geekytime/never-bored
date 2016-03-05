@@ -1,12 +1,29 @@
+import Cycle from "@cycle/core";
+import {makeDOMDriver, hJSX} from "@cycle/dom";
+
 var getActivity = require("./get-activity.js");
 
-var activityElement = document.getElementById("activity");
-
-var setActivityText = function(){
-  var activityText = getActivity();
-  activityElement.innerHTML = activityText;
+var render = function(activityText){
+  console.log(activityText);
+  return (
+    <div>
+      <h1>Never Bored</h1>
+      <p>Kid(s): I'm bored!</p>
+      <p>You: Okay. Here's your new job:</p>
+      <h2>{activityText}</h2>
+      <input id="refresh" type="button" value="Refresh"/>
+    </div>
+  );
 };
 
-document.getElementById("refresh").addEventListener("click", setActivityText);
+var main = function(sources){
+  var clickRefresh$ = sources.DOM.select("#refresh").events("click").map(getActivity);
+  var activities$ = clickRefresh$.startWith(getActivity());
+  var sinks = {};
+  sinks.DOM = activities$.map(render);
+  return sinks;
+};
 
-setActivityText();
+Cycle.run(main, {
+  DOM: makeDOMDriver("#app")
+});
