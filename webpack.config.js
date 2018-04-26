@@ -1,16 +1,28 @@
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const htmlWebpackTemplate = require("html-webpack-template")
+
 module.exports = {
-  entry: "./app.js",
+  entry: "./lib/index.js",
   output: {
-      path: __dirname,
-      filename: "bundle.js"
+      path: path.join(__dirname, "public"),
+      filename: "bundle.js",
+      publicPath: "/"
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader"
-      }
-    ]
-  }
-};
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "babel-loader"
+    }]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: htmlWebpackTemplate,
+      title: "Never Bored",
+      filename: "index.html",
+      inject: false,
+      lang: "en-US"
+    })
+  ]
+}
